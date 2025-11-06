@@ -10,3 +10,10 @@ if ( locked )
 
 // Camera zoom
 distance += ( mouse_wheel_down() - mouse_wheel_up() ) * 8;
+
+// Change meshes
+if ( keyboard_check_pressed(vk_space) ) 
+{
+	if ( model == rounded ) model = minecraft;
+	else model = rounded;
+}

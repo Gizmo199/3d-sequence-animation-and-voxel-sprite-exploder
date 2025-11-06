@@ -26,11 +26,9 @@ layer_force_draw_depth(true, 1);
 // Matrix for building the head rotated by 90 degrees (since its facing forward)
 var _headOrientation = matrix_build(0, 0, 0, 90, 0, 0, 1, 1, 1);
 
-// The amount of 'smoothing' we want models to have. Change to 0 for a minecraft look!
+// Explode sprites into voxel models with a rounded look
 var _smoothingDepth = 8;
-
-// Explode sprites into voxel models
-model = 
+rounded = 
 {
 	head	: voxel_create_from_sprite(sp_head, 0, 5, _smoothingDepth, _headOrientation),
 	torso	: voxel_create_from_sprite(sp_torso, 0, 8, _smoothingDepth),
@@ -38,3 +36,17 @@ model =
 	arm		: voxel_create_from_sprite(sp_arm_lower, 0, 2, _smoothingDepth),
 	leg		: voxel_create_from_sprite(sp_leg_lower, 0, 2, _smoothingDepth)
 }
+
+// Explode sprites into voxel models with a minecraft look
+var _smoothingDepth = 0;
+minecraft = 
+{
+	head	: voxel_create_from_sprite(sp_head, 0, 5, _smoothingDepth, _headOrientation),
+	torso	: voxel_create_from_sprite(sp_torso, 0, 8, _smoothingDepth),
+	upper	: voxel_create_from_sprite(sp_upper, 0, 4, _smoothingDepth),
+	arm		: voxel_create_from_sprite(sp_arm_lower, 0, 2, _smoothingDepth),
+	leg		: voxel_create_from_sprite(sp_leg_lower, 0, 2, _smoothingDepth)
+}
+
+// Set our model
+model = minecraft;
