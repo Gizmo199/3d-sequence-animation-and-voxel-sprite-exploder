@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"render_sequence_animation_mesh",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"render_sequence_animation_mesh",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Example/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

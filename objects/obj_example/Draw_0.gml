@@ -1,0 +1,10 @@
+shader_set(sh_voxel);
+var t = ( current_time/1000 ) mod 1;
+var m = matrix_build(0, 0, 0, 90, current_time/10, 0, 1, 1, 1);
+render_sequence_animation_mesh(seq_example, model.torso, "root", t, m);
+render_sequence_animation_mesh(seq_example, [-1, model.head], ["root", "head"], t, m);
+render_sequence_animation_mesh(seq_example, [-1, model.upper, model.leg], ["root", "leg.upper.r", "leg.lower.r"], t, m, [0, 3, 0]);
+render_sequence_animation_mesh(seq_example, [-1, model.upper, model.leg], ["root", "leg.upper.l", "leg.lower.l"], t, m, [0,-3, 0]);
+render_sequence_animation_mesh(seq_example, [-1, model.upper, model.arm], ["root", "arm.upper.r", "arm.lower.r"], t, m, [0, 7, 0]);
+render_sequence_animation_mesh(seq_example, [-1, model.upper, model.arm], ["root", "arm.upper.l", "arm.lower.l"], t, m, [0,-7, 0]);
+shader_reset();
